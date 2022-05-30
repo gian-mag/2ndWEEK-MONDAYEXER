@@ -318,11 +318,5 @@ footer a {
     }
 }
 @media print {
-    header {display: none;}
-    aside {display: none;}
-    footer {display: none;}
-    main section {display: none;}
-    iframe {display: none;}
-    .toTop {display: none;}
-    .social {display: none;}
+    header, aside, footer, main section, iframe, .toTop, .social{display: none;}
 }
