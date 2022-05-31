@@ -11,6 +11,29 @@ body {
 * {box-sizing: border-box;}
 hr {display: none;} /* rimuove l'elemento */
 
+/* BUTTON FIXED */
+.toTop {
+    position: fixed;
+    bottom: 10px;
+    right: -7px;
+}
+.social {
+    position: fixed;
+    bottom: 20vh;
+    right: -7px;
+}
+.toTop a, .social a {
+    color: #c77ea2;
+    font-size: 4rem;
+    display: block;
+}
+    .social a {
+        color: rgb(45, 101, 185);
+    }
+.toTop .far, .social .far {
+    background: white;
+}
+
 /* HEADER */
 header {
     background: rgb(0,160,198);
@@ -24,7 +47,7 @@ header {
     padding: 2em 1.5em;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 10;
 }
 header div img {
     margin-bottom: 20px;
@@ -34,10 +57,12 @@ header nav ul {
 }
 header nav li {
     list-style: none;
-    display: inline;
-    float: left;
-    width: 33.33%;
+    display: inline-block;
+    margin-right: 10px;
 }
+    header nav li:last-child {
+        margin-right: 0;
+    }
 header nav li a {
     color: white;
     text-decoration: none;
@@ -56,16 +81,9 @@ main {
     padding: 2em 1em;
     margin-bottom:1.5em ;
 }
-.sadge {
-    float: left;
-    border: 4px solid #0099cc;
-    outline: 4px solid  #aa2277;
-    margin-right: 20px;
-    padding: 5px;
-}
 section { 
     background-color: #e3e3e3;
-    padding: 1em;
+    padding: 2.5em 1em 1em;
     margin-bottom: 2em;
     position: relative;
 }
@@ -76,15 +94,15 @@ section h2 {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1em;
-    background-color: #969494;
+    background-color: #a3a3a3;
     position: absolute;
-    top: -10%;
-    box-shadow: 1px 1px 3px black;
-    padding: 0 2rem;
+    top: -0.5em;
+    left: 5%;
+    padding: 0 1em;
+    box-shadow: 1px 1px 2px #333;
+
 }
-section .PLS {
-    padding-top: 2em;
-}
+
 /* ELEMENTI NEL MAIN - ARTICLE */
 h1 {
     font-size: 2.6rem;
@@ -98,6 +116,18 @@ p, address, ul, ol, dl, blockquote {
 h1 + p {
     color: #a0a0a0;
 }
+.imgLeft {
+    float: left;
+    margin-right: 20px;
+    border: 4px solid #00A0C6;
+    outline: 4px solid #a02571;
+    padding: 3px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 ul, ol {
     margin-left: 2em;
 }
@@ -199,53 +229,94 @@ footer {
 footer a {
     color: fuchsia;
 }
-.SOCIO {
-    position: fixed;
-    top: 50%;
-    right: -5px;
-    font-size: 4rem;
-}
-.GOTOP {
-    position: fixed;
-    top: 70%;
-    right: -5px;
-    font-size: 4rem;
-    margin-top: 70px;
-}
-.SOCIO a {
-    color: blue;
-}
-.GOTOP a {
-    color: violet;
-}
-.far {
-    display: block;
-    margin-top: 30px;
-    background-color: white;
-}
 /* MEDIA QUERIES */
-@media screen and (min-width:480px) {
-    html {
-        font-size: 70%;
-    }
+@media screen and (min-width: 768px) {
     body {
-        line-height: 1.8;
+        line-height: 1.7;
+        font-size: 2rem;
+    }
+    body p, h1, h2, ul, ol, li {
+        padding: 0rem 2.5rem;
+    }
+    header {
+        font-size: 2rem;
+    }
+    main article h1 {
+        font-size: 3rem;
+        margin-top: 28px;
+    }
+    header div img {
+        float: left;
+        width: 200px; height: 100px;
+        padding-bottom: 15px;
+    }
+    table {
+        margin: 0 auto;
+    }
+    main .TEST {
+        margin-top: 3rem;
+    }
+    article section p {
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
+    main article iframe {
+        
+        width: 45%;
+        float: left;
+        margin: 0rem 2.1rem;
+        height: 350px;
+    }
+    main article section{
+        display: inline-block;
+        width: 45%;
+        margin-left: 0.7rem;
+        height: 350px;
+        border-radius: 20px;
+        text-align: center;
+    }
+    aside div {
+        display: inline-block;
+        width: 28%;
+        margin-left: 2.6rem;
+    }
+    footer p{
+        font-size: 1.5rem;
     }
 }
-
-@media screen and (min-width:768px) {
-    html {
-        font-size: 80%;
-    }
+@media screen and (min-width: 1024px) {
     body {
         line-height: 2;
     }
+    body p, h1, h2, ul, ol, li {
+        padding: 0rem 3rem;
+    }
+    main article h1 {
+        font-size: 4rem;
+    }
+    header div img {
+        float: left;
+        width: 300px; height: 150px;
+        padding-bottom: 45px;
+    }
+    main article iframe {
+        margin: 0rem 3rem;
+    }
+    aside div {
+        margin-left: 3.5rem;
+    }
 }
-@media screen and (min-width:1200px) {
-    html {
-        font-size: 100%;
+@media screen and (min-width: 1200px) {
+    main article h1 {
+        font-size: 4rem;
     }
-    body {
-        line-height: 2.4;
+    aside div {
+        margin-left: 4.2rem;
     }
+    footer p{
+        font-size: 1.8rem;
+    }
+}
+@media print {
+    header, aside, footer, main section, iframe, .toTop, .social{display: none;}
 }
